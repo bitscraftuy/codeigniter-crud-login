@@ -1,13 +1,8 @@
 # codeigniter-login-logout-register
 A user login, logout, register start for Codeigniter 3
+Also News CRUD implementation
 
 ## Notice
-Codeigniter has not evolved as fast as modern php and php best practices.<br>
-It has become a very old framework, and I advise against using it, even for beginners.
-
-Try something like [Laravel](https://laravel.com/) or [Symfony](https://symfony.com/).
-
-With Laravel you get login-logout-register out of the box, and it is a very easy to use and pleasant framework: go for it.
 
 ## Installation
 1. Open /application/config/database.php and edit with your database settings
