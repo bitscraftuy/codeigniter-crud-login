@@ -1,4 +1,4 @@
-# codeigniter-login-logout-register
+# Login/Logout Register, News CRUD
 A user login, logout, register start for Codeigniter 3
 Also News CRUD implementation
 
@@ -39,11 +39,10 @@ CREATE TABLE IF NOT EXISTS `news` (
   PRIMARY KEY (`id`),
   KEY `slug` (`slug`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
- 
+
 ```
 Go to http://example.com/register and create a user
 
 ## Usage
 It is just a starter for user login logout register functionalities.
-
-Extend the user controller or keep it as it is and write your own application with Codeigniter.
+News CRUD example
