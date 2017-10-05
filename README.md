@@ -30,6 +30,16 @@ CREATE TABLE IF NOT EXISTS `ci_sessions` (
   PRIMARY KEY (id),
   KEY `ci_sessions_timestamp` (`timestamp`)
 );
+
+CREATE TABLE IF NOT EXISTS `news` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(128) NOT NULL,
+  `slug` varchar(128) NOT NULL,
+  `text` text NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `slug` (`slug`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+ 
 ```
 Go to http://example.com/register and create a user
 
