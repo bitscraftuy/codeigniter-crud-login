@@ -11,6 +11,12 @@ class News extends CI_Controller {
  
     public function index()
     {
+
+        if (!isset($_SESSION['logged_in'])) {
+
+            redirect('login');
+        }
+
         $data['news'] = $this->news_model->get_news();
         $data['title'] = 'News archive';
  
@@ -21,6 +27,12 @@ class News extends CI_Controller {
  
     public function view($slug = NULL)
     {
+
+        if (!isset($_SESSION['logged_in'])) {
+
+            redirect('login');
+        }
+
         $data['news_item'] = $this->news_model->get_news($slug);
         
         if (empty($data['news_item']))
@@ -37,6 +49,12 @@ class News extends CI_Controller {
     
     public function create()
     {
+
+        if (!isset($_SESSION['logged_in'])) {
+
+            redirect('login');
+        }
+
         $this->load->helper('form');
         $this->load->library('form_validation');
  
@@ -63,6 +81,11 @@ class News extends CI_Controller {
     
     public function edit()
     {
+        if (!isset($_SESSION['logged_in'])) {
+
+            redirect('login');
+        }
+
         $id = $this->uri->segment(3);
         
         if (empty($id))
@@ -90,12 +113,18 @@ class News extends CI_Controller {
         {
             $this->news_model->set_news($id);
             //$this->load->view('news/success');
-            redirect( base_url() . 'index.php/news');
+            redirect( base_url() . 'news');
         }
     }
     
     public function delete()
     {
+
+        if (!isset($_SESSION['logged_in'])) {
+
+            redirect('login');
+        }
+
         $id = $this->uri->segment(3);
         
         if (empty($id))
@@ -106,6 +135,6 @@ class News extends CI_Controller {
         $news_item = $this->news_model->get_news_by_id($id);
         
         $this->news_model->delete_news($id);        
-        redirect( base_url() . 'index.php/news');        
+        redirect( base_url() . 'news');        
     }
 }

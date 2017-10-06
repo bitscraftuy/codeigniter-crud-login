@@ -1,20 +1,31 @@
-<h2><?php echo $title; ?></h2>
+<div class="container">
+    <div class="row"> 
+
+        <div class="col-md-12">
+
+
+                <h2><?php echo $title; ?></h2>
  
-<?php echo validation_errors(); ?>
- 
-<?php echo form_open('news/create'); ?>    
-    <table>
-        <tr>
-            <td><label for="title">Title</label></td>
-            <td><input type="input" name="title" size="50" /></td>
-        </tr>
-        <tr>
-            <td><label for="text">Text</label></td>
-            <td><textarea name="text" rows="10" cols="40"></textarea></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td><input type="submit" name="submit" value="Create news item" /></td>
-        </tr>
-    </table>    
-</form>
+                <?php echo validation_errors(); ?>
+                 
+                <?php echo form_open('news/create'); ?>  
+
+                <div class="input-group">
+                    <input class="form-control" placeholder="Title" type="input" name="title" size="50" />
+                </div>
+                <div class="input-group">
+                     <textarea class="form-control" placeholder="Description" name="text" rows="10" cols="40"></textarea>
+                    
+                </div>
+                <div class="input-group">
+                    <input class="btn btn-default" type="submit" name="submit" value="Create news item" />
+                </div>
+                    
+                </form>
+
+        </div>
+
+    </div>
+</div>
+
+
